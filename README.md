@@ -10,6 +10,7 @@ This my codes to the problems on [成功高中線上解題系統](203.64.138.177
 * 0004  
 * s0003
 * s0002
+* s0001   
 ---
 **Skip:**  
 ------------
@@ -17,8 +18,6 @@ This my codes to the problems on [成功高中線上解題系統](203.64.138.177
 **Working:**  
 ------------
 
-* s0001   
-* s0002  
 
 ---
 
