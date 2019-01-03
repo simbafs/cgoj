@@ -29,7 +29,7 @@ int main(){
 			}
 		}
 		
-		while(score[minpass-1] > 60 && minpass-1 >= 0) minpass --;
+		while(score[minpass-1] >= 60 && minpass-1 >= 0) minpass --;
 //		cout << minpass << ' ' << maxnopass << endl;
 		while(score[maxnopass+1] < 60 && maxnopass+1 < num) maxnopass ++;
 //		cout << minpass << ' ' << maxnopass << endl;
