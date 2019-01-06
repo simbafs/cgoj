@@ -35,8 +35,8 @@ int main(){
 //		cout << minpass << ' ' << maxnopass << endl;
 		
 		if(above && !below){
-			cout << score[minpass] << endl;
 			cout << "best case" << endl;
+			cout << score[minpass] << endl;
 		}else if(!above && below){
 			cout << score[maxnopass] << endl;
 			cout << "worst case" << endl;
