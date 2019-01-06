@@ -1,4 +1,4 @@
-![成功高中線上解題系統](https://github.com/simbafs/ckshjudge/blob/master/img/icon.png)  
+![成功高中線上解題系統](https://raw.githubusercontent.com/simbafs/cgoj/master/img/icon.png)  
 This my codes to the problems on [成功高中線上解題系統](203.64.138.177)
 =======================================================================
 **Finished:**  
