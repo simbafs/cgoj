@@ -24,9 +24,29 @@ int main(){
 				nopass++;
 			}
 		}
+		
+		sort(_pass,pass-_pass);
+		sort(_nopass,nopass-_nopass);
+		
+
+		for(int i=0; i<nopass-_nopass; i++){
+			cout << *(_nopass+i) << ' ';
+		}
+		for(int i=0; i<pass-_pass; i++){
+			cout << *(_pass+i);
+			if(i != pass-_pass-1){
+				cout << ' ';
+			}
+		}
+		cout << endl;
+		
 		if(pass-_pass == 0){
 			
 		}
+
+
+//		cout << *(_pass) << ' ' << *(nopass-1) << endl;
+
 
 		/*
 		for(int i=0; i<num; i++){
