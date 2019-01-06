@@ -3,32 +3,23 @@
 
 using namespace std;
 
-int num = 0;
+int num=0;
+int score[20] = {};
 
-int sort(int*,int);
+int sort();
 
 int main(){
 	while(cin >> num){
-		int _pass[20] = {};
-		int _nopass[20] ={};
-		int* pass = _pass;
-		int* nopass = _nopass;
+		bool below = true;
+		bool above = true;
+		int minpass = num-1;
+		int maxnopass = 0;
 		for(int i=0; i<num; i++){
-			int tmp = 0;
-			cin >> tmp;
-			if(tmp >= 60){
-				*pass = tmp;
-				pass++;
-			}else{
-				*nopass = tmp;
-				nopass++;
-			}
+			cin >> score[i];
+			if(score[i] < 60) above = false;
+			if(score[i] >= 60) below = false;
 		}
-		if(pass-_pass == 0){
-			
-		}
-
-		/*
+		sort();
 		for(int i=0; i<num; i++){
 			cout << score[i];
 			if(i != num-1){
@@ -53,18 +44,17 @@ int main(){
 			cout << score[maxnopass] << endl << score[minpass] << endl;
 		}
 
-	*/
 	}
 	return 0;
 }
 
-int sort(int* ar,int n){
-	for(int i=0; i<n-1; i++){
-		for(int j=i+1; j<n; j++){
-			if(*(ar+i) > *(ar+j)){
-				*(ar+i) ^= *(ar+j);
-				*(ar+j) ^= *(ar+i);
-				*(ar+i) ^= *(ar+j);
+int sort(){
+	for(int i=0; i<num-1; i++){
+		for(int j=i+1; j<num; j++){
+			if(score[i] > score[j]){
+				score[i] ^= score[j];
+				score[j] ^= score[i];
+				score[i] ^= score[j];
 			}
 		}
 	}
