@@ -15,11 +15,13 @@ int main(){
 		for(; index<m; index++) cin >> k[index];
 		for(int i=0; i<m; i++) k[i] = pow(2,n-k[i]);
 		sort(k,index);
-		for(int i=0; i<m;i++) cout << k[i] << ' '; cout << endl;
+//		for(int i=0; i<m;i++) cout << k[i] << ' '; cout << endl;
 		for(int i=0,j=0; i<n; i++){
-			cout << i << ' ' << j << ' ' << k[j] << endl;
+//			cout << i << ' ' << j << ' ' << k[j] << endl;
 			if(pow(2,i) != k[j]){
-				sum += pow(2,k[j]);
+				sum += pow(2,i);
+//				cout << pow(2,i) << ' ' << sum << endl;
+			}else{
 				j++;
 			}
 		}
