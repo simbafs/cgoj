@@ -76,5 +76,5 @@ int main(){
 		}
 		player.print();
 	}
-
+	return 0;
 }
