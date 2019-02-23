@@ -35,7 +35,7 @@ This my codes to the problems on [成功高中線上解題系統](203.64.138.177
 
 ---
 
-**My CKSHJudge Account:**  
+**My CGOJ Account:**  
 -------------------------
 [Paper](http://203.64.138.177/user-home?username=paper)
 ---
