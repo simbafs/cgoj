@@ -6,7 +6,7 @@
 ###Author: Simba Fs###
 ---
 * finish -->  放已完成的題目。  
-	
+
 * data  -->  放該題測資檔（.data檔，其實是純文字）。  
 
 * working  -->  挑戰中的題目，包含該題測資。  
