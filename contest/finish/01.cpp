@@ -7,6 +7,6 @@ using namespace std;
 int main(void){
 	string trash;
 	cin >> trash;
-	cout << paper;
+	cout << "paper";
 	return 0;
 }

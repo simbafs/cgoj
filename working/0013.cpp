@@ -7,36 +7,32 @@ int main(){
 	int q = 0;
 	while(cin >> n >> q){
 		long long x[500000] = {};
+		long long re = 0;
+		int cmd = 0;
+		int l = 0;
+		int r = 0;
+		int k = 0;
+		int tmp = 0;
 		for(int i = 0; i < n; i++) cin >> x[i];
 		for(int i = 0; i < q; i++){
-			int cmd = 0;
-			int l = 0;
-			int r = 0;
-			int k = 0;
-			long long re = 0;
 			cin >> cmd;
 			switch(cmd){
 				case 1:
 					cin >> l >> r >> k;
-					l -= 1;
-					r -= 1;
-					for(int i = l; i <= r; i++){
-						x[i] += k;
-					}
+					for(;l <= r; l++) x[l] += k;
 					break;
 				case 2:
-					cin >> l >> r;
-					for(int i = l-1; i <= r-1; i++){
-						re += x[i]*x[i];
-					}
+					re = 0;
+					for(;l <= r; l++) re += x[l]*x[l];
 					cout << re << endl;
 					break;
 				case 3:
-					cin >> l >> r;
-					re = x[l-1]*x[l-1];
-					for(int i = l; i <= r-1; i++){
-						long long tmp = x[i]*x[i];
-						if(tmp < re) re = tmp;
+					tmp = x[l]*x[l];
+					re = tmp;
+					l++;
+					for(;l < r; l++) {
+							tmp = x[l]*x[l];
+							if (tmp < re) re = tmp;
 					}
 					cout << re << endl;
 					break;
