@@ -7,7 +7,6 @@ int main(){
 	int m = 0;
 	int p[10] = {};
 	int fab[100000] = {};
-	int mod = 1000000007;
 	fab[0] = 1;
 	for(int i = 1; i < 100000; i++) fab[i] = 0;
 	cin >> n >> m;
@@ -21,10 +20,10 @@ int main(){
 			else{
 				re += fab[i - k];
 			}
-			re %= mod;
 		}
 		fab[i] = re;
 	}
-	cout << fab[n] << '\n';
+	for(int i = 0; i <= n; i++) cout << fab[i] << ' ';
+	cout << '\n';
 	return 0;
 }
