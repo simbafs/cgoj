@@ -1,35 +1,56 @@
+#include <iostream>
+#include <cmath>
 #include <stdio.h>
+#include <string.h>
 
+using namespace std;
+
+#define LINE_LEN 10000000
+#define ERR_DIGIT -100000000
+char line[LINE_LEN]={};
+char* cp = line;
+
+int nextDigit() {
+    int d;
+	if (cp >= line+strlen(line)) {
+		if (NULL == fgets(line, LINE_LEN, stdin)) return ERR_DIGIT;
+		cp = line;
+		while (line[strlen(line)-1] == '\r' || line[strlen(line)-1] == '\n') line[strlen(line)-1] = '\0';
+	}
+	while (*cp == ' ' && cp < line+strlen(line)) ++cp;
+	if (cp < line+strlen(line)) d = stoi(cp);
+	else return ERR_DIGIT;
+	// move to next digit
+	while (*cp != ' ' && cp < line+strlen(line)) ++cp;
+	// and skip SPACE
+	while (*cp == ' ' && cp < line+strlen(line)) ++cp;
+	return d;
+}
 int main(void){
-	setvbuf(stdin, calloc(1 << 20, sizeof(char)), _IOFBF, 1 << 20);
-	setvbuf(stdout, calloc(1 << 20, sizeof(char)), _IOFBF, 1 << 20);
-	int n = 0;
-	int m = 0;
+	int n, m, t, l, r, k, re;
 	int a[100000] = {};
 	int* ap;
-	int t = 0;
-	int l = 0;
-	int r = 0;
-	int k = 0;
-	int re = 0;
-	int input[1000] = {};
-	char* cp;
-	scanf("%d %d", &n, &m);
+
+	n = nextDigit();
+	m = nextDigit();
 	for(int i = 0; i < n; i++){
-		scanf("%d", &a[i]);
+		a[i] = nextDigit();
 	}
 	for(int i = 0; i < m; i++){
-		scanf("%d %d %d", &t, &l, &r);
+		t = nextDigit();
+		l = nextDigit();
+		r = nextDigit();
 		if(t == 1){
 			for(ap=a+l-1; ap<a+r; ap++) {
 				if(*ap){
 					re ++;
 				}
 			}
-			printf("%d\n", re);
+			fputs(to_string(re).c_str(), stdout);
+			fputc('\n', stdout);
 			re = 0;
 		}else{	
-			scanf("%d", &k);
+			k = nextDigit();
 			for(ap=a+l-1; ap<a+r; ap++) {
 				if(*ap < k){
 					*ap = 0;
