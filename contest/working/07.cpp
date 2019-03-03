@@ -5,15 +5,25 @@
 
 using namespace std;
 
+int aa = 0;
+int indexx = 0;
+char s[2000000] = {};
+char *nn;
+
+int Get(int in[]){
+	aa = 0;
+	indexx = 0;
+	fgets(s, sizeof(s), stdin);
+	nn = strtok(s, " ");
+	while(nn != NULL){
+	    aa = stoi(nn);
+		in[indexx++] = aa;
+		nn = strtok(NULL, " ");
+	}
+	return indexx;
+}
+
 int main(void){
-	std::ios::sync_with_stdio(false);
-	/*
-	static const auto init = []() {
-		std::ios::sync_with_stdio(false);
-		std::cin.tie(nullptr);
-		return nullptr;
-	}();
-	*/
 	int n = 0;
 	int m = 0;
 	int a[100000] = {};
@@ -23,37 +33,29 @@ int main(void){
 	int r = 0;
 	int k = 0;
 	int re = 0;
-	char input[1000000] = {};
+	int input[1000] = {};
 	char* cp;
-	cin >> n >> m;
-	//for(int i = 0; i < n; i++) cin >> a[i];
-	ap = a;
-	cp = input;
-	fgets(input, sizeof(input), stdin);
-	char* tmp;
-	tmp = strtok(cp, " ");
-	do{
-		//*ap = atoi(tmp);
-//		cout << atoi(tmp) << ' ';
-		cout << *ap << '\n';
-		ap ++;
-	}while(tmp = strtok(NULL, " "));
-	
-	//for(ap = a; ap < a+n; ap++) cin >> *ap; 
+	Get(input);
+	n = input[0];
+	m = input[1];
+	Get(a);
 	for(int i = 0; i < m; i++){
-		cin >> t >> l >> r;
+		Get(input);
+		t = input[0];
+		l = input[1];
+		r = input[2];
+//		cin >> t >> l >> r;
 		if(t == 1){
-			//for(int j = l; j <= r; j++){
 			for(ap=a+l-1; ap<a+r; ap++) {
 				if(*ap){
 //					cout << "\t" << j << endl;
 					re ++;
 				}
 			}
-			cout << re << endl;
+			printf("%d\n", re);
 			re = 0;
-		}else{
-			cin >> k;
+		}else{	
+			k = input[3];
 			for(ap=a+l-1; ap<a+r; ap++) {
 				if(*ap < k){
 					*ap = 0;
@@ -63,6 +65,5 @@ int main(void){
 			}
 		}
 	}
-	
 	return 0;
 }
