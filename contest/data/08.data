@@ -1,0 +1,13 @@
+2 11
+5 0
+balance 1
+balance 2
+txpool.pending
+trans 1 2 1
+txpool.pending
+miner.start()
+balance 1
+balance 2
+trans 1 2 2
+balance 1
+balance 2
